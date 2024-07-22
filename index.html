@@ -62,26 +62,29 @@
     <p class="red-hat-text-700 text-center mx-[70px]" style="color: hsl(0, 0%, 100%);  ">
       We're launching soon
     </p>
-    <div class="flex">
-      <div class="flex w-[150px]  h-[200px]">
-        <div class="flex relative w-full flex-col items-center text-center justify-center">
-          <div
-            style="background-color:  hsl(237, 19%, 23%); height: 50px; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
-            class="rounded-md  absolute top-[30px] p-5 ">
-            <p class="text-6xl font-bold" style=" margin-top:-5px;color: hsl(345, 73%, 57%);" id="tx">123456788</p>
-          </div> 
-          <div id="flip-1"
-            style="background-color:  hsl(237, 19%, 23%); height: 50px; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
-            class="rounded-md   p-5 ">
-            <p class="text-6xl font-bold" style=" margin-top:-5px;color: hsl(345, 73%, 57%);" id="tx1">123456788</p>
-          </div>
-          <div style="background-color:  hsl(236, 21%, 26%); height: 50px; overflow: hidden;"
-            class="rounded-md shadow-black shadow-lg p-5 ">
-            <p style="margin-top:-54px;color: hsl(345, 95%, 68%);" class="text-6xl font-bold" id="tx2">123456788</p>
-          </div>
-          <p class="text-sm mt-5 red-hat-text-700   " style="color: hsl(237, 18%, 59%);">Seconds</p>
+    <div class="flex flex-col">
+      <div class="flex w-[150px]  h-[120px]  relative w-full flex-col items-center text-center justify-center">
+        <div  
+          style="background-color:  hsl(237, 19%, 23%); height: 50%; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
+          class="rounded-md w-full  absolute top-0 p-5 ">
+          <p class="text-6xl font-bold absolute" style="bottom: -25px; margin-left: auto; margin-right: auto; left: 0; right: 0; color: hsl(345, 73%, 57%);" id="tx">01</p>
+        </div>
+        <div id="flip-1"
+          style="background-color:  hsl(237, 19%, 23%); height: 50%; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
+          class="rounded-md w-full relative p-5 ">
+          <p class="text-6xl font-bold absolute " style=" bottom: -25px; margin-left: auto; margin-right: auto; left: 0; right: 0;  color: hsl(345, 73%, 57%);" id="tx1">02</p>
+        </div>
+        <div id="flip-2"
+          style="background-color:  hsl(236, 21%, 26%); height: 50%; overflow: hidden; transform: rotateX(90deg);transform-origin: center top; transform-style:preserve-3d"
+          class="rounded-md  w-full  z-10 shadow-black shadow-lg p-5 ">
+          <p style="margin-top:-54px;color: hsl(345, 95%, 68%);" class="text-6xl font-bold" id="tx2">00</p>
+        </div>
+        <div style="background-color:hsl(236, 21%, 26%); height: 50%; overflow: hidden;"
+          class="rounded-md w-full  absolute bottom-0 shadow-black shadow-lg p-5 ">
+          <p style="margin-top:-54px;color: hsl(345, 95%, 68%);" class="text-6xl font-bold" id="tx3">02</p>
         </div>
       </div>
+      <p class="text-sm mt-5 red-hat-text-700   " style="color: hsl(237, 18%, 59%);">Seconds</p>
 
       <!-- <div class="attribution">
         Challenge by
