@@ -1,12 +1,31 @@
-function startFlipper() {
-  let i = 0;
-  {
-    i++;
-      flipDown("flip-1", "flip-2", "tx", "tx1", "tx2", "tx3", i, () => { });
+function getLaunchTime(countDownDate) {
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+  if (distance < 0) {
+    return { d: -1, h: -1, m: -1, s: -1 };
   }
+  let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let s = Math.floor((distance % (1000 * 60)) / 1000);
+
+  return { d, h, m, s };
+}
+function startFlipper() {
+  var countDownDate = new Date();
+  countDownDate.setHours(countDownDate.getHours() + 8);
+
+  flipDown("flip-1", "flip-2", "tx", "tx1", "tx2", "tx3", () => {
+    return getLaunchTime(countDownDate.getTime()).s;
+  });
 }
 
-function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, num, onEnd) {
+function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, getValue) {
+  let num = getValue();
+  if (num < 0) {
+    return;
+  }
   let val = num < 10 ? "0" + num : num.toString();
   let secFlip = document.getElementById(id);
   let secFlip2 = document.getElementById(id2);
@@ -18,25 +37,7 @@ function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, num, onEnd) {
     if (index == 80) {
       tx.innerText = val;
     }
-    if (index == 90) {
-      setTimeout(() => {
-        if (index <= 90) {
-          secFlip2.style.transform = `rotateX(${index}deg) rotateY(${
-            index >= 90 ? 90 : 0
-          }deg)`;
-        }
-        if (index == 90) {
-          tx.innerText = val;
-          tx2.innerText = val;
-          tx3.innerText = val;
-          secFlip.style.transform = `rotateX(${index}deg) rotateY(${180}deg)`;
-        }
-        if (onEnd && index == 180) {
-          onEnd();
-          secFlip.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
-        }
-      }, 200 + index * 10);
-    }
+
     setTimeout(() => {
       if (index <= 90) {
         secFlip.style.transform = `rotateX(${index}deg)  `;
@@ -49,13 +50,14 @@ function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, num, onEnd) {
         tx3.innerText = val;
         secFlip.style.transform = `rotateX(${index}deg) rotateY(${180}deg)`;
       }
-      if (onEnd && index == 180) {
+      if (getValue && index == 180) {
         secFlip.style.transform = `rotateX(${0}deg)  `;
         secFlip2.style.transform = `rotateX(${90}deg) `;
 
         tx4.innerText = val;
-        flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, ++num, onEnd);
+
+        flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, getValue);
       }
-    }, 200 + index * 10);
+    }, 100 + index * 5);
   }
 }
