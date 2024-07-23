@@ -14,25 +14,39 @@ function getLaunchTime(countDownDate) {
 }
 function startFlipper() {
   var countDownDate = new Date();
-  countDownDate.setHours(countDownDate.getHours() + 8);
-
-  flipDown("flip-1", "flip-2", "tx", "tx1", "tx2", "tx3", () => {
+  countDownDate.setHours(countDownDate.getHours() + 24*9);
+setInterval(() => {
+    flipDown("flipper-1", () => {
     return getLaunchTime(countDownDate.getTime()).s;
   });
+  flipDown("flipper-2", () => {
+    return getLaunchTime(countDownDate.getTime()).m;
+  });  flipDown("flipper-3", () => {
+    return getLaunchTime(countDownDate.getTime()).h;
+  }); flipDown("flipper-4", () => {
+    return getLaunchTime(countDownDate.getTime()).d;
+  });
+}, 1200);
+
 }
 
-function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, getValue) {
+function flipDown(flipId, getValue) {
   let num = getValue();
   if (num < 0) {
     return;
   }
+   
   let val = num < 10 ? "0" + num : num.toString();
-  let secFlip = document.getElementById(id);
-  let secFlip2 = document.getElementById(id2);
-  let tx = document.getElementById(txId);
-  let tx2 = document.getElementById(tx2Id);
-  let tx3 = document.getElementById(tx3Id);
-  let tx4 = document.getElementById(tx4Id);
+  let flip = document.getElementById(flipId);
+  let secFlip = flip.querySelectorAll(".flip-1 ")[0];
+  let secFlip2 = flip.querySelectorAll(".flip-2 ")[0];
+  let tx = flip.querySelectorAll(".tx1 ")[0];
+  let tx2 = flip.querySelectorAll(".tx2 ")[0];
+  let tx3 = flip.querySelectorAll(".tx3 ")[0];
+  let tx4 = flip.querySelectorAll(".tx4 ")[0];
+  if (val==tx.textContent) {
+    return;
+  }
   for (let index = 0; index <= 180; index++) {
     if (index == 80) {
       tx.innerText = val;
@@ -56,7 +70,6 @@ function flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, getValue) {
 
         tx4.innerText = val;
 
-        flipDown(id, id2, txId, tx2Id, tx3Id, tx4Id, getValue);
       }
     }, 100 + index * 5);
   }

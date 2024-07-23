@@ -1,0 +1,61 @@
+<div [id]="flipId" class="flex flex-col">
+  <div
+    class="flex shadow-black shadow-lg w-[100px] h-[100px] relative w-full flex-col items-center text-center justify-center"
+  >
+    <div
+      style="background-color: hsl(237, 19%, 23%)"
+      class="rounded-md bottom-box w-full absolute top-0 h-[50%]"
+    >
+      <p
+        class="text-6xl left-0 right-0 bottom-[-25px] tx1 font-bold absolute"
+        style="color: hsl(345, 73%, 57%)"
+      >
+        00
+      </p>
+    </div>
+    <div
+      style="
+        background-color: hsl(237, 19%, 23%);
+        transform-origin: center bottom;
+        transform-style: preserve-3d;
+      "
+      class="bottom-box rounded-md h-[50%] overflow-hidden w-full relative flip-1"
+    >
+      <p
+        class="text-6xl left-0 right-0 bottom-[-25px] tx2 font-bold absolute"
+        style="color: hsl(345, 73%, 57%)"
+      >
+        00
+      </p>
+    </div>
+    <div
+      style="
+        background-color: hsl(236, 21%, 26%);
+        transform-origin: center top;
+        transform-style: preserve-3d;
+      "
+      class="rounded-md top-box flip-2 overflow-hidden w-full h-[50%] z-10 shadow-black shadow-lg p-5"
+    >
+      <p
+        style="color: hsl(345, 95%, 68%)"
+        class="text-6xl mt-[-54px] font-bold tx3"
+      >
+        00
+      </p>
+    </div>
+    <div
+      style="background-color: hsl(236, 21%, 26%)"
+      class="rounded-md top-box h-[50%] w-full overflow-hidden absolute bottom-0 shadow-black shadow-lg p-5"
+    >
+      <p
+        style="color: hsl(345, 95%, 68%)"
+        class="text-6xl mt-[-54px] font-bold tx4"
+      >
+        00
+      </p>
+    </div>
+  </div>
+  <p class="text-sm mt-5 red-hat-text-700" style="color: hsl(237, 18%, 59%)">
+    {{ label }}
+  </p>
+</div>

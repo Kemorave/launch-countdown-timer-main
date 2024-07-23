@@ -23,6 +23,7 @@
       text-transform: uppercase;
       text-indent: 10px;
       letter-spacing: 6px;
+      text-align: center;
     }
 
     .attribution {
@@ -42,8 +43,23 @@
           hsl(271, 25%, 17%) 100%);
     }
 
+    .top-box {
+      --mask: radial-gradient(7px at 7px 0, #0000 98%, #000) -7px;
+      -webkit-mask: var(--mask);
+      mask: var(--mask);
+    }
+
+    .bottom-box {
+      --mask: radial-gradient(7px at 7px 100%, #0000 98%, #000) -7px;
+      -webkit-mask: var(--mask);
+      mask: var(--mask);
+    }
+
     .bottom-div {
-      left: 40%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 150px;
 
       svg {
         cursor: pointer;
@@ -59,36 +75,157 @@
 
 <body onload="startFlipper()" class="body-bg flex flex-col items-center">
   <main class="flex flex-col items-center my-auto z-10">
-    <p class="red-hat-text-700 text-center mx-[70px] my-[50px]" style="color: hsl(0, 0%, 100%);  ">
+    <p class="red-hat-text-700 text-center mx-[70px] my-[100px]" style="font-size:  x-large;color: hsl(0, 0%, 100%)">
       We're launching soon
     </p>
-    <div class="flex flex-col" id="flipper-1">
-      <div class="flex w-[100px]  h-[100px]  relative w-full flex-col items-center text-center justify-center">
-        <div
-          style="background-color:  hsl(237, 19%, 23%); height: 50%; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
-          class="rounded-md w-full  absolute top-0">
-          <p class="text-6xl tx1 font-bold absolute"
-            style="bottom: -25px; margin-left: auto; margin-right: auto; left: 0; right: 0; color: hsl(345, 73%, 57%);"
-        id="tx">01</p>
+
+    <div class="flex gap-7">
+      <div id="flipper-4" class="flex flex-col">
+        <div class="flex shadow-black shadow-lg w-[100px] h-[100px] relative w-full flex-col items-center text-center justify-center">
+          <div style="background-color: hsl(237, 19%, 23%)" class="rounded-md bottom-box w-full absolute top-0 h-[50%]">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx1 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(237, 19%, 23%);
+                transform-origin: center bottom;
+                transform-style: preserve-3d;
+              " class="bottom-box rounded-md h-[50%] overflow-hidden w-full relative flip-1">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx2 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(236, 21%, 26%);
+                transform-origin: center top;
+                transform-style: preserve-3d;
+              " class="rounded-md top-box flip-2 overflow-hidden w-full h-[50%] z-10 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx3">
+              00
+            </p>
+          </div>
+          <div style="background-color: hsl(236, 21%, 26%)"
+            class="rounded-md top-box h-[50%] w-full overflow-hidden absolute bottom-0 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx4">
+              00
+            </p>
+          </div>
         </div>
-        <div id="flip-1"
-          style="background-color:  hsl(237, 19%, 23%); height: 50%; overflow: hidden; transform-origin: center bottom; transform-style:preserve-3d"
-          class="rounded-md w-full relative">
-          <p class="text-6xl font-bold absolute "
-            style=" bottom: -25px; margin-left: auto; margin-right: auto; left: 0; right: 0;  color: hsl(345, 73%, 57%);"
-            id="tx1">02</p>
-        </div>
-        <div id="flip-2"
-          style="background-color:  hsl(236, 21%, 26%); height: 50%; overflow: hidden; transform: rotateX(90deg);transform-origin: center top; transform-style:preserve-3d"
-          class="rounded-md  w-full  z-10 shadow-black shadow-lg p-5 ">
-          <p style="margin-top:-54px;color: hsl(345, 95%, 68%);" class="text-6xl font-bold" id="tx2">00</p>
-        </div>
-        <div style="background-color:hsl(236, 21%, 26%); height: 50%; overflow: hidden;"
-          class="rounded-md w-full  absolute bottom-0 shadow-black shadow-lg p-5 ">
-          <p style="margin-top:-54px;color: hsl(345, 95%, 68%);" class="text-6xl font-bold" id="tx3">02</p>
-        </div>
+        <p class="text-sm mt-5 red-hat-text-700" style="color: hsl(237, 18%, 59%)">
+          Days
+        </p>
       </div>
-      <p class="text-sm mt-5 red-hat-text-700   " style="color: hsl(237, 18%, 59%);">Seconds</p>
+      <div id="flipper-3" class="flex flex-col">
+        <div class="flex shadow-black shadow-lg w-[100px] h-[100px] relative w-full flex-col items-center text-center justify-center">
+          <div style="background-color: hsl(237, 19%, 23%)" class="rounded-md bottom-box w-full absolute top-0 h-[50%]">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx1 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(237, 19%, 23%);
+                transform-origin: center bottom;
+                transform-style: preserve-3d;
+              " class="rounded-md bottom-box h-[50%] overflow-hidden w-full relative flip-1">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx2 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(236, 21%, 26%);
+                transform-origin: center top;
+                transform-style: preserve-3d;
+              " class="rounded-md top-box flip-2 overflow-hidden w-full h-[50%] z-10 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx3">
+              00
+            </p>
+          </div>
+          <div style="background-color: hsl(236, 21%, 26%)"
+            class="rounded-md top-box h-[50%] w-full overflow-hidden absolute bottom-0 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx4">
+              00
+            </p>
+          </div>
+        </div>
+        <p class="text-sm mt-5 red-hat-text-700" style="color: hsl(237, 18%, 59%)">
+          Hours
+        </p>
+      </div>
+      <div id="flipper-2" class="flex flex-col">
+        <div class="flex shadow-black shadow-lg w-[100px] h-[100px] relative w-full flex-col items-center text-center justify-center">
+          <div style="background-color: hsl(237, 19%, 23%)" class="rounded-md bottom-box w-full absolute top-0 h-[50%]">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx1 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(237, 19%, 23%);
+                transform-origin: center bottom;
+                transform-style: preserve-3d;
+              " class="rounded-md bottom-box h-[50%] overflow-hidden w-full relative flip-1">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx2 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(236, 21%, 26%);
+                transform-origin: center top;
+                transform-style: preserve-3d;
+              " class="rounded-md top-box flip-2 overflow-hidden w-full h-[50%] z-10 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx3">
+              00
+            </p>
+          </div>
+          <div style="background-color: hsl(236, 21%, 26%)"
+            class="rounded-md top-box h-[50%] w-full overflow-hidden absolute bottom-0 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx4">
+              00
+            </p>
+          </div>
+        </div>
+        <p class="text-sm mt-5 red-hat-text-700" style="color: hsl(237, 18%, 59%)">
+          Minutes
+        </p>
+      </div>
+      <div id="flipper-1" class="flex flex-col">
+        <div
+          class="flex shadow-black shadow-lg w-[100px] h-[100px] relative w-full flex-col items-center text-center justify-center">
+          <div style="background-color: hsl(237, 19%, 23%)" class="rounded-md bottom-box w-full absolute top-0 h-[50%]">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx1 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(237, 19%, 23%);
+                transform-origin: center bottom;
+                transform-style: preserve-3d;
+              " class="rounded-md bottom-box h-[50%] overflow-hidden w-full relative flip-1">
+            <p class="text-6xl left-0 right-0 bottom-[-25px] tx2 font-bold absolute" style="color: hsl(345, 73%, 57%)">
+              00
+            </p>
+          </div>
+          <div style="
+                background-color: hsl(236, 21%, 26%);
+                transform-origin: center top;
+                transform-style: preserve-3d;
+              " class="rounded-md top-box flip-2 overflow-hidden w-full h-[50%] z-10 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx3">
+              00
+            </p>
+          </div>
+          <div style="background-color: hsl(236, 21%, 26%)"
+            class="rounded-md h-[50%] top-box w-full overflow-hidden absolute bottom-0 shadow-black shadow-lg p-5">
+            <p style="color: hsl(345, 95%, 68%)" class="text-6xl mt-[-54px] font-bold tx4">
+              00
+            </p>
+          </div>
+        </div>
+        <p class="text-sm mt-5 red-hat-text-700" style="color: hsl(237, 18%, 59%)">
+          Seconds
+        </p>
+      </div>
+    </div>
   </main>
   <div class="absolute bottom-10 z-10 bottom-div flex gap-7">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.red-hat-text-700 {
+  font-family: "Red Hat Text";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-indent: 10px;
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.body-bg {
+  position: relative;
+  height: 100vh;
+  background: hsl(236, 21%, 26%);
+  background: linear-gradient(hsl(234, 17%, 12%) 50%, hsl(271, 25%, 17%) 100%);
+}
+
+.top-box {
+  --mask: radial-gradient(7px at 7px 0, #0000 98%, #000) -7px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.bottom-box {
+  --mask: radial-gradient(7px at 7px 100%, #0000 98%, #000) -7px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.bottom-div {
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 150px;
+
+  svg {
+    cursor: pointer;
+    fill: #8385a9;
+
+    :hover {
+      fill: hsl(345, 95%, 68%);
+    }
+  }
+}
