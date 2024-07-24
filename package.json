@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href https://kemorave.github.io/launch-countdown-timer-main/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-  "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist/launch-countdown-timer-main/browser"
   },
   "private": true,
   "dependencies": {
