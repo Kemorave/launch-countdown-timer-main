@@ -79,7 +79,7 @@ export class AppComponent  implements OnInit{
           tx.innerText = val;
           tx2.innerText = val;
           tx3.innerText = val;
-          secFlip.style.transform = `rotateX(${index}deg) rotateY(${180}deg)`;
+          secFlip.style.transform = `rotateX(${index}deg) `;
         }
         if (getValue && index == 180) {
           secFlip.style.transform = `rotateX(${0}deg)  `;
